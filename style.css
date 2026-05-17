@@ -252,20 +252,7 @@ body {
  /* Importando uma fonte cursiva bonita do Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-        /* Centraliza todo o conteúdo na página */
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: #fff5f8; /* Um fundo suave que combina com os tons */
-            font-family: 'Great Vibes', cursive;
-        }
-
-        /* Estilização do container de texto */
+              /* Estilização do container de texto */
         .conteudo {
             max-width: 600px;
             padding: 20px;
