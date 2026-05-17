@@ -254,6 +254,14 @@ body {
 
               /* Estilização do container de texto */
         .conteudo {
+           margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
             max-width: 600px;
             padding: 20px;
         }
