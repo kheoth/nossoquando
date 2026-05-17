@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Casamento | 20.09.2026</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonte Cursiva Elegante do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="main-page">
+
+    <!-- Áudio de Fundo em Loop -->
+    <!-- Nota: A maioria dos navegadores modernos exige interação do usuário (como o clique no botão da tela anterior) para permitir o autoplay do áudio -->
+    <audio autoplay loop id="bg-music">
+        <!-- Substitua pelo link ou caminho da sua música -->
+        <source src="background-music.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <div class="overlay"></div>
+
+    <main class="content-wrapper">
+        <!-- Topo / Lettering -->
+        <header class="header-section">
+            <h1 class="cursive-title">Nosso quando chegou...</h1>
+            <div class="date-badge">
+                <span class="date-text">20 de Setembro de 2026</span>
+                <span class="time-text">às 15h30</span>
+            </div>
+        </header>
+
+        <!-- Cronômetro Regressivo -->
+        <section class="countdown-section">
+            <div id="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <p>Dias</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <p>Horas</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <p>Min</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <p>Seg</p>
+                </div>
+            </div>
+        </section>
+<section class="carousel-section">
+    <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+            
+            <img src="foto1.jpg" alt="Foto do Casal 1">
+            <img src="foto2.jpg" alt="Foto do Casal 2">
+            <img src="foto3.jpg" alt="Foto do Casal 3">
+            <img src="foto4.jpg" alt="Foto do Casal 4">
+	    <img src="foto5.jpg" alt="Foto do Casal 1">
+            <img src="foto6.jpg" alt="Foto do Casal 2">
+            <img src="foto7.jpg" alt="Foto do Casal 3">
+            <img src="foto8.jpg" alt="Foto do Casal 4">
+	    <img src="foto9.jpg" alt="Foto do Casal 1">
+            <img src="foto10.jpg" alt="Foto do Casal 2">
+            <img src="foto11.jpg" alt="Foto do Casal 3">
+            <img src="foto12.jpg" alt="Foto do Casal 4">
+	    <img src="foto13.jpg" alt="Foto do Casal 1">
+            <img src="foto14.jpg" alt="Foto do Casal 2">
+            <img src="foto15.jpg" alt="Foto do Casal 3">
+            <img src="foto16.jpg" alt="Foto do Casal 4">
+	    <img src="foto17.jpg" alt="Foto do Casal 1">
+            <img src="foto18.jpg" alt="Foto do Casal 2">
+            <img src="foto19.jpg" alt="Foto do Casal 3">
+           </div>
+    </div>
+</section>
+
+        <!-- Rodapé com Links Externos (Imagens) -->
+        <footer class="footer-links">
+            <a href="https://site.lejour.com.br/alinemateus" target="_blank" rel="noopener noreferrer" class="footer-img-link">
+                <img src="presente.png" alt="Lista de Presentes">
+            </a>
+            <a href="https://wa.me/19981698716" target="_blank" rel="noopener noreferrer" class="footer-img-link">
+                <img src="whatsapp.png" alt="Confirmar Presença">
+            </a>
+            <a href="https://maps.app.goo.gl/qRrJqCVZe5EESsUh6?g_st=aw" target="_blank" rel="noopener noreferrer" class="footer-img-link">
+                <img src="maps.png" alt="Localização">
+            </a>
+        </footer>
+    </main>
+
+    <!-- Script do Cronômetro -->
+    <script>
+        // Define a data do casamento (20 de Setembro de 2026 às 15:30)
+        const weddingDate = new Date("Sep 20, 2026 15:30:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            // Cálculos de tempo
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Exibe o resultado nos elementos correspondentes
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            // Se a contagem regressiva terminar
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<div class='wedding-day'>É hoje! ❤️</div>";
+            }
+        }, 1000);
+
+        // Tentativa de forçar o autoplay do áudio após a transição de página
+        window.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('bg-music');
+            audio.play().catch(() => {
+                console.log("O navegador bloqueou o autoplay. O áudio tocará ao primeiro clique na tela.");
+                document.body.addEventListener('click', () => audio.play(), { once: true });
+            });
+        });
+
+// Configurações do Carrossel Automático
+    const track = document.getElementById('carouselTrack');
+    const slides = Array.from(track.children);
+    let currentIndex = 0;
+    const intervalTime = 3000; // Tempo de exibição de cada foto (3000ms = 3 segundos)
+
+    function moveCarousel() {
+        currentIndex++;
+        
+        // Se chegar ao fim, volta para a primeira imagem de forma suave
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+        
+        // Calcula o deslocamento horizontal baseado na imagem atual
+        const amountToMove = currentIndex * 100;
+        track.style.transform = `translateX(-${amountToMove}%)`;
+    }
+
+    // Inicia o carrossel automático apenas se houver imagens cadastradas
+    if (slides.length > 0) {
+        setInterval(moveCarousel, intervalTime);
+    }
+    </script>
+</body>
+</html>

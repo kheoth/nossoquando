@@ -1,0 +1,274 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS & PALETA DE CORES
+   Cores: Rosa (#F7D6D8), Dourado (#D4AF37), Branco (#FFFFFF)
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #4A4A4A;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   TELA DE BOAS-VINDAS (index.html)
+   ========================================== */
+.video-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(247, 214, 216, 0.4); /* Filtro suave rosa sobre o vídeo */
+}
+
+.enter-btn {
+    display: block;
+    max-width: 200px;
+    width: 60%;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.enter-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================
+   PÁGINA PRINCIPAL (principal.html)
+   ========================================== */
+.main-page {
+    /* Substitua pelo link ou caminho da imagem de fundo da página principal */
+    background: url('site-background.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+/* Filtro translúcido branco/rosa para dar leitura ao texto */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85); 
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Header & Lettering */
+.header-section {
+    margin-bottom: 30px;
+}
+
+.cursive-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #D4AF37; /* Dourado */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.date-badge {
+    background-color: rgba(247, 214, 216, 0.6); /* Rosa claro suave */
+    border: 1px solid #D4AF37; /* Linha fina em dourado */
+    padding: 15px 20px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.date-text {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #4A4A4A;
+    text-transform: uppercase;
+}
+
+.time-text {
+    display: block;
+    font-size: 1rem;
+    color: #D4AF37;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Cronômetro Regressivo */
+.countdown-section {
+    margin: 40px 0;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.countdown-item {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 12px 0;
+    width: 70px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid #F7D6D8; /* Detalhe em rosa */
+}
+
+.countdown-item span {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #D4AF37; /* Dourado */
+    display: block;
+}
+
+.countdown-item p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8A8A8A;
+    margin-top: 4px;
+}
+
+.wedding-day {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #D4AF37;
+}
+
+/* Rodapé / Links de Imagem */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.footer-img-link {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 2px solid #F7D6D8;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.footer-img-link:active, .footer-img-link:hover {
+    transform: translateY(-5px);
+    border-color: #D4AF37; /* Muda para dourado no toque/hover */
+}
+
+.footer-img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ==========================================
+   CARROSSEL DE IMAGENS (COMPLEMENTAR)
+   ========================================== */
+.carousel-section {
+    width: 100%;
+    max-width: 320px; /* Tamanho ideal padrão para smartphones */
+    margin: 30px auto; /* Centraliza na página e dá espaçamento */
+    padding: 0 10px;
+}
+
+.carousel-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantém o carrossel perfeitamente quadrado. Se preferir retangular (paisagem), mude para 4 / 3 */
+    overflow: hidden; /* Esconde as imagens que estão na "fila" lateral */
+    border: 3px solid #D4AF37; /* Lindo acabamento em Borda Dourada */
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra projetada suave e elegante */
+    background-color: #FFFFFF;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Transição horizontal suave */
+}
+
+.carousel-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer ou esticar */
+    flex-shrink: 0; /* Garante que cada imagem ocupe exatamente 100% do espaço visual */
+}
+
+/* Ajuste para telas um pouco maiores (Tablets/PCs) */
+@media (min-width: 768px) {
+    .carousel-section {
+        max-width: 400px; /* Fica ligeiramente maior em telas grandes */
+    }
+}
+
+/* ==========================================
+   AJUSTES PARA TELAS MAIORES (Tablets/PCs)
+   ========================================== */
+@media (min-width: 768px) {
+    .cursive-title {
+        font-size: 4rem;
+    }
+    .date-text {
+        font-size: 1.5rem;
+    }
+    .countdown-item {
+        width: 90px;
+        padding: 18px 0;
+    }
+    .countdown-item span {
+        font-size: 2.2rem;
+    }
+    .footer-img-link {
+        width: 80px;
+        height: 80px;
+        padding: 16px;
+    }
+}
