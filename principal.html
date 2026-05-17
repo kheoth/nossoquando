@@ -10,6 +10,9 @@
 </head>
 <body class="main-page">
 
+<!-- Elemento de áudio configurado para tocar uma única vez -->
+    <audio id="meuAudio" src="abertura.ogg"></audio>
+	
     <!-- Áudio de Fundo em Loop -->
     <!-- Nota: A maioria dos navegadores modernos exige interação do usuário (como o clique no botão da tela anterior) para permitir o autoplay do áudio -->
     <audio autoplay loop id="bg-music">
@@ -51,6 +54,68 @@
                 </div>
             </div>
         </section>
+
+<div class="conteudo">
+        <h1>Nosso Quando</h1>
+        <p>
+Não foi talvez, nem promessa ao vento,<br>
+não foi sonho perdido em algum lugar.<br>
+Foi o tempo, com seu estranho intento,<br>
+marcando a hora certa de nos encontrar.<br>
+<br>
+Veio sem aviso, como chegam as histórias<br>
+que o coração reconhece antes da razão.<br>
+Trouxe no acaso as mais belas memórias,<br>
+e no inesperado, a certeza da mão.<br>
+<br>
+Até o caminho precisou se perder,<br>
+o carro calar, a pressa cessar,<br>
+porque havia um destino a acontecer,<br>
+e duas vidas precisavam se cruzar.<br>
+<br>
+De conversa leve, de riso sincero,<br>
+de um olhar que dizia sem precisar falar,<br>
+nasceu o que nem sabíamos, mas...<br>
+que desde sempre estava a nos esperar.<br>
+<br>
+De um erro, o universo sorriu.<br>
+De um encontro, o tempo parou.<br>
+De um beijo, o mundo se abriu.<br>
+E o nosso quando, enfim, chegou.<br>
+<br>
+Chegou manso, mas cheio de eternidade,<br>
+como quem sabe onde sempre quis ficar.<br>
+Virou abrigo, casa, cumplicidade,<br>
+um jeito bonito de amar e sonhar.<br>
+<br>
+E assim seguimos, entre planos e risos,<br>
+entre os dias comuns e o amor singular,<br>
+aprendendo que os mais belos paraísos<br>
+são feitos de alguém para compartilhar.<br>
+<br>
+Escrito a dois — e com passos pequenos,<br>
+que também fazem festa no chão:<br>
+porque toda história guarda seus acenos,<br>
+e o Malinho já mora em nosso coração.<br>
+<br>
+Hoje celebramos o que o destino escreveu,<br>
+e que o amor escolheu continuar.<br>
+Pois se antes era só o tempo e o eu,<br>
+agora é nós, e um sempre a começar.<br>
+<br>
+Nosso quando não foi só um instante,<br>
+foi o início do para sempre florescer.<br>
+E quem ouvir esta história adiante<br>
+há de sentir: amar é se reconhecer.<br>
+<br>
+Porque existem encontros que o céu assina,<br>
+e há amores que já nascem lar.<br>
+O nosso veio assim — doce sina —<br>
+e desde então, é só continuar.
+</p>
+    </div>
+
+		
 <section class="carousel-section">
     <div class="carousel-container">
         <div class="carousel-track" id="carouselTrack">
@@ -108,6 +173,22 @@
 
     <!-- Script do Cronômetro -->
     <script>
+		 // Função para tentar tocar o áudio assim que a página carrega
+        window.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('meuAudio');
+            
+            // Tenta reproduzir o áudio automaticamente
+            audio.play().catch(error => {
+                console.log("A reprodução automática foi bloqueada pelo navegador. O áudio tocará no primeiro clique do usuário.");
+                
+                // Os navegadores modernos bloqueiam som automático sem interação prévia.
+                // Esse código garante que o som toque assim que o usuário clicar em qualquer lugar da tela.
+                document.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true }); // O 'once: true' garante que esse evento só rode uma vez
+            });
+        });
+		
         // Define a data do casamento (20 de Setembro de 2026 às 15:30)
         const weddingDate = new Date("Sep 20, 2026 15:30:00").getTime();
 
