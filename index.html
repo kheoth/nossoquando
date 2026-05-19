@@ -21,22 +21,8 @@
     <main class="welcome-container">
         <a href="principal.html" class="enter-btn" title="Entrar no site">
             <!-- Substitua pelo link da sua imagem centralizada -->
-            <img src="buton-image.png" alt="Entrar no Site" onclick="ativarTelaCheia()">
+            <img src="buton-image.png" alt="Entrar no Site">
         </a>
     </main>
-<script>
-function ativarTelaCheia() {
-  let elemento = document.documentElement; // página inteira
-
-  if (elemento.requestFullscreen) {
-    elemento.requestFullscreen();
-  } else if (elemento.webkitRequestFullscreen) { // Safari
-    elemento.webkitRequestFullscreen();
-  } else if (elemento.msRequestFullscreen) { // IE/Edge antigo
-    elemento.msRequestFullscreen();
-  }
-}
-</script>
-
 </body>
 </html>
