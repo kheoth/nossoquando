@@ -283,6 +283,15 @@ body {
             font-family: 'Great Vibes', cursive;
             color: #C13B3D;
 }
+
+.aquarela {
+        width: 300px; /* largura da imagem */
+        height: auto; /* mantém proporção */
+        border-radius: 20px; /* arredonda os cantos */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* sombra projetada */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* efeito suave */
+    }
+
 /* ==========================================
    AJUSTES PARA TELAS MAIORES (Tablets/PCs)
    ========================================== */
