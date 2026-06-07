@@ -286,8 +286,8 @@ body {
 
 /* imagem aquarela */
 .aquarela {     
-        max-width: 100%; 
-         width: 100%; /* largura da imagem */
+        max-width: 320px; 
+         width: 320px; /* largura da imagem */
         height: auto; /* mantém proporção */
         border-radius: 20px; /* arredonda os cantos */
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* sombra projetada */
