@@ -269,7 +269,7 @@ body {
         /* Estilo do Texto */
         .conteudo p {
             color: #C13B3D;
-            font-size: 3rem; /* Tamanho do corpo do texto */
+            font-size: 1.5rem; /* Tamanho do corpo do texto */
             margin-top: 0;
         }
 .legenda{
@@ -280,7 +280,7 @@ body {
             justify-content: center;
             align-items: center;
             text-align: center;
-           font-size: 3rem;
+           font-size: 1.5rem;
             font-family: 'Great Vibes', cursive;
             color: #C13B3D;
 }
