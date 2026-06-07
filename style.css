@@ -285,18 +285,31 @@ body {
 }
 
 /* imagem aquarela */
-.aquarela {     
-        background-image: url("aquarela.png");
-          width: 100%;
-    max-width: 320px; /* largura da imagem */
-        height: auto; /* mantém proporção */
-        border-radius: 20px; /* arredonda os cantos */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* sombra projetada */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* efeito suave */
-         object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer ou esticar */
-       flex-shrink: 0; /* Garante que cada imagem ocupe exatamente 100% do espaço visual */
-    }
+.container-imagem {
+            /* Define o tamanho exato da div */
+            width: 320px;
+            height: 320px;
+            
+            /* Cria as bordas arredondadas na div */
+            border-radius: 16px;
+            
+            /* Adiciona a sombra projetada (suave e elegante) */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            
+            /* Garante que a imagem respeite as bordas arredondadas da div */
+            overflow: hidden; 
+            
+            /* Opcional: apenas para centralizar a div na tela neste exemplo */
+            margin: 40px auto; 
+        }
 
+        .imagem-estilizada {
+            width: 100%;
+            height: 100%;
+            /* Garante que a imagem preencha o espaço sem distorcer */
+            object-fit: cover; 
+            display: block;
+        }
 /* ==========================================
    AJUSTES PARA TELAS MAIORES (Tablets/PCs)
    ========================================== */
