@@ -285,10 +285,10 @@ body {
 }
 
 /* imagem aquarela */
-.container-imagem {
+.aquarela {
             /* Define o tamanho exato da div */
-            width: 100px;
-            height: 100px;
+            width: 320px;
+            height: 320px;
             
             /* Cria as bordas arredondadas na div */
             border-radius: 16px;
