@@ -292,6 +292,8 @@ body {
         border-radius: 20px; /* arredonda os cantos */
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* sombra projetada */
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* efeito suave */
+         object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer ou esticar */
+       flex-shrink: 0; /* Garante que cada imagem ocupe exatamente 100% do espaço visual */
     }
 
 /* ==========================================
